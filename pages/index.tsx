@@ -5,7 +5,7 @@ import {
   maxClass101IncomeAmount,
   minClass101IncomeAmount,
   totalClass101IncomeAmount,
-} from '../datas/Class101IncomeData';
+} from '../datas/class101IncomeData';
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
