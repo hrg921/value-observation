@@ -21,7 +21,7 @@ export const LineChart: React.FC<Props> = ({ series }) => {
       id: chartId,
       type: "line",
       zoom: {
-        enabled: false
+        enabled: true
       }
     },
     dataLabels: {
