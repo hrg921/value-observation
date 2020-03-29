@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import ReactCountdown, { CountdownRenderProps } from 'react-countdown';
 
@@ -21,11 +22,12 @@ const renderer = ({
   } else {
     // Render a countdown
     return (
-      <span>
-        {total}
+      <div>
+        {total} milliseconds <br />
         {days} days, {hours}:{minutes}:{seconds}:{milliseconds} <br />
-        til {props.date?.toString()}
-      </span>
+        til {moment(props.date).year()}/{moment(props.date).month() + 1}/
+        {moment(props.date).date()}
+      </div>
     );
   }
 };
