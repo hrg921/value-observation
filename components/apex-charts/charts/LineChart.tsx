@@ -3,7 +3,7 @@ import ReactApexChart from 'react-apexcharts';
 
 import { chartData } from './chartData';
 
-const LineChart: React.FC = () => {
+export const LineChart: React.FC = () => {
   const series = [
     {
       name: "Class101",
