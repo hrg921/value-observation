@@ -5,15 +5,17 @@ import { ChartData } from '../interface';
 import { useChartId } from './useChartId';
 
 type Props = {
+  formatter?: (value: number) => string;
   series: [
     {
       name: string;
       data: ChartData;
     }
   ];
+  title?: string;
 };
 
-export const LineChart: React.FC<Props> = ({ series }) => {
+export const LineChart: React.FC<Props> = ({ formatter, series, title }) => {
   const chartId = useChartId();
   const options = {
     chart: {
@@ -31,7 +33,7 @@ export const LineChart: React.FC<Props> = ({ series }) => {
       curve: "straight"
     },
     title: {
-      text: "Product Trends by Month",
+      text: title,
       align: "left"
     },
     grid: {
@@ -42,9 +44,7 @@ export const LineChart: React.FC<Props> = ({ series }) => {
     },
     yaxis: {
       labels: {
-        formatter: function(value: number) {
-          return value.toLocaleString() + "₩";
-        }
+        formatter
       }
     }
   };
