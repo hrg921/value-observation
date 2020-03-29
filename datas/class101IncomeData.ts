@@ -1,3 +1,5 @@
+import { ChartData } from '../components/apex-charts/interface';
+
 export const class101IncomeData = [
   { time: new Date("04/10/2019"), value: { currency: "KRW", amount: 1889250 } },
   { time: new Date("05/09/2019"), value: { currency: "KRW", amount: 3313630 } },
@@ -12,6 +14,11 @@ export const class101IncomeData = [
   { time: new Date("02/10/2020"), value: { currency: "KRW", amount: 3548033 } },
   { time: new Date("03/10/2020"), value: { currency: "KRW", amount: 3711781 } }
 ];
+
+export const class101IncomeChartData: ChartData = class101IncomeData.map(e => ({
+  x: e.time.toISOString(),
+  y: e.value.amount
+}));
 
 export const class101IncomeAmountData = class101IncomeData.map(
   e => e.value.amount

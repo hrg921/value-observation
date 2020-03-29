@@ -1,19 +1,24 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-import { chartData } from './chartData';
+import { ChartData } from '../interface';
+import { useChartId } from './useChartId';
 
-export const LineChart: React.FC = () => {
-  const series = [
+type Props = {
+  series: [
     {
-      name: "Class101",
-      data: chartData
+      name: string;
+      data: ChartData;
     }
   ];
+};
+
+export const LineChart: React.FC<Props> = ({ series }) => {
+  const chartId = useChartId();
   const options = {
     chart: {
       height: 350,
-      id: "line-chart",
+      id: chartId,
       type: "line",
       zoom: {
         enabled: false
@@ -45,7 +50,7 @@ export const LineChart: React.FC = () => {
   };
 
   return (
-    <div id="line-chart">
+    <div id={chartId}>
       <ReactApexChart
         options={options}
         series={series}
