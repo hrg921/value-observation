@@ -1,4 +1,4 @@
-import { DynamicLineChart } from '../components/apex-charts/dynamics/DynamicLineChart';
+import { LineChart } from '../components/charts';
 import {
   averageClass101IncomeAmount,
   class101IncomeChartData,
@@ -10,7 +10,7 @@ import {
 const IncomesPage = () => (
   <div>
     <h1>Income Charts</h1>
-    <DynamicLineChart
+    <LineChart
       series={[
         { name: "Class101 Income Chart", data: class101IncomeChartData }
       ]}
