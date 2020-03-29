@@ -8,6 +8,9 @@ const InvestmentsPage = () => {
       <DynamicPieChart
         labels={["삼성전자우", "삼성전자", "카카오", "ETH", "BTC", "ATOM"]}
         series={[86050, 130950, 280000, 827845, 149656, 25500]}
+        tooltip={{
+          valueFormatter: (val: number) => val.toLocaleString() + "₩"
+        }}
       />
     </PieChartContainer>
   );
