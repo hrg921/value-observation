@@ -1,14 +1,14 @@
 # https://dashboard.fauna.com/db/GeonHo
 
+# createAt is not necessary because ts is exist at fauna db
+
 type Point {
-  createdAt: Time!
   name: String!
   pointChanges: [PointChange!] @relation
 }
 
 type PointChange {
   amount: Int!
-  createdAt: Time!
   note: String
   point: Point!
 }
