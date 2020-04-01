@@ -1,0 +1,14 @@
+# https://dashboard.fauna.com/db/GeonHo
+
+type Point {
+  createdAt: Time!
+  name: String!
+  pointChanges: [PointChange!] @relation
+}
+
+type PointChange {
+  amount: Int!
+  createdAt: Time!
+  note: String
+  point: Point!
+}
