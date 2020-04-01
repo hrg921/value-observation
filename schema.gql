@@ -4,7 +4,7 @@
 
 type Point {
   name: String!
-  pointChanges: [PointChange!] @relation
+  pointChanges: [PointChange!]
 }
 
 type PointChange {
