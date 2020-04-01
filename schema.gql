@@ -12,3 +12,7 @@ type PointChange {
   note: String
   point: Point!
 }
+
+type Query {
+  allPointChanges: [PointChange!]
+}
